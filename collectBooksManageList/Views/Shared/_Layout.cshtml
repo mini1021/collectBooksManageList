@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>......</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-with,initial-scal=1">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <style>
+
+        span {
+            color: plum;
+        }
+
+        body {
+            padding-top: 50px;
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        #content {
+            width: 100%;
+            min-height: 600px;
+            background :url(../img/slide-books.png)no-repeat fixed;
+            background-size: cover;
+            padding-top: 20px;
+            color: #fff;
+        }
+
+        .register {
+            padding: 20px;
+            font-weight: 700;
+            border: #0026ff solid 1px;
+            -moz-border-radius: 10px; /* Gecko browsers */
+            -webkit-border-radius: 10px; /* Webkit browsers */
+            border-radius: 10px; /* W3C syntax */
+            background:#ffffff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="~/Home/Index" title="Home">Home</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="~/Home/BookList">BookList</a></li>
+                    <li><a href="~/Home/EditBook">EditBook</a></li>
+                    <li><a href="~/Home/Registered">Registered</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign in/Sign out<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="~/Home/Login">Log in</a></li>
+                            <li><a href="#">Log out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="content">
+        <div class="container">
+
+            @RenderBody()
+
+        </div>
+    </div>
+</body>
+</html>
