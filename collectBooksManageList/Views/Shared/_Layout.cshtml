@@ -1,13 +1,27 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>......</title>
+    <title>藏書管理清單</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-with,initial-scal=1">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet">
     <script src="~/Scripts/jquery-1.10.2.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #000000;
+        }
 
         span {
             color: plum;
@@ -24,7 +38,7 @@
         #content {
             width: 100%;
             min-height: 600px;
-            background :url(../img/slide-books.png)no-repeat fixed;
+            background: url(../img/slide-books.png)no-repeat fixed;
             background-size: cover;
             padding-top: 20px;
             color: #fff;
@@ -37,7 +51,6 @@
             -moz-border-radius: 10px; /* Gecko browsers */
             -webkit-border-radius: 10px; /* Webkit browsers */
             border-radius: 10px; /* W3C syntax */
-            background:#ffffff;
         }
     </style>
 </head>
@@ -55,18 +68,19 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="~/Home/BookList">BookList</a></li>
-                    <li><a href="~/Home/EditBook">EditBook</a></li>
-                    <li><a href="~/Home/Registered">Registered</a></li>
+                    <li><a href="~/Home/BookList"><span class="glyphicon glyphicon-list-alt"></span>BookLists</a></li>
+                    <li><a href="~/Home/EditBook"><span class="glyphicon glyphicon-book"></span>EditBook</a></li>
+                    <li><a href="~/Home/Registered"><span class="glyphicon glyphicon-tasks"></span>Registered</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign in/Sign out<span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="~/Home/Login">Log in</a></li>
-                            <li><a href="#">Log out</a></li>
-                        </ul>
-                    </li>
+                    @if (Session["userId"].ToString() == "")
+                    {
+                        <li><a href="~/Home/Login"><span class="glyphicon glyphicon-off"></span>Sign in</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="~/Home/Logout"><span class="glyphicon glyphicon-off"></span>Sign out</a></li>
+                    }
                 </ul>
             </div>
         </div>

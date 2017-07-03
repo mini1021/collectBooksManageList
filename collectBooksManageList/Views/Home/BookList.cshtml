@@ -1,12 +1,45 @@
-﻿<div class="list-group">
-    <a href="#" class="list-group-item active">
-        <h4 class="list-group-item-heading">
-            書名
-        </h4>
-    </a>
-    <a href="#" class="list-group-item">
-        <h4 class="list-group-item-heading">
-            集數
-        </h4>
-    </a>
+﻿@model List<BookList>
+@using collectBooksManageList.Models
+
+<div class="list-group">
+   
+    <h1>Hello @Session["userid"]</h1>
+    <table>
+        <tr>
+            <th>Book Name</th>
+            <th>Episode</th>
+        </tr>
+
+        @foreach (BookList bk in Model)
+        {
+
+
+            <tr>
+                <td>@bk.bookName</td>
+                <td>@bk.episode</td>
+            </tr>
+
+            @*<a class="list-group-item active">
+                    <h4 class="list-group-item-heading">
+                        書名：@bk.bookName
+                    </h4>
+                </a>
+                <a class="list-group-item">
+                    <h4 class="list-group-item-heading">
+                        集數：@bk.episode
+                    </h4>
+                </a>
+
+                    <a href="~/Home/Delete/@bk.bookId">
+
+                        <span class="glyphicon glyphicon-remove" style="color:red"></span>
+                        <b>Delete</b>
+
+                    </a>*@
+
+
+        }
+
+    </table>
+
 </div>
