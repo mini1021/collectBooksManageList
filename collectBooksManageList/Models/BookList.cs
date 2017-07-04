@@ -16,7 +16,7 @@ namespace collectBooksManageList.Models
     {
         public int bookId { get; set; }
         public string bookName { get; set; }
-        public int episode { get; set; }
+        public string episode { get; set; }
         public string U_Id { get; set; }
     }
 }

@@ -123,8 +123,8 @@ namespace collectBooksManageList.Controllers
             Session["userId"] = book.U_Id;
             ViewBag.bookName = book.bookName;
             ViewBag.episode = book.episode;
-            if (string.IsNullOrEmpty(book.bookName)
-                )
+            if (string.IsNullOrEmpty(book.bookName)|| 
+                string.IsNullOrEmpty(book.episode))
             {
                 ViewBag.show = "請輸入書名或集數";
                 return View();

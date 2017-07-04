@@ -11,7 +11,7 @@
           </Key>
           <Property Name="bookId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="bookName" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="episode" Type="int" Nullable="false" />
+          <Property Name="episode" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="U_Id" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="Registered">
@@ -37,7 +37,7 @@
           </Key>
           <Property Name="bookId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="bookName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="episode" Type="Int32" Nullable="false" />
+          <Property Name="episode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="U_Id" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Registered">
