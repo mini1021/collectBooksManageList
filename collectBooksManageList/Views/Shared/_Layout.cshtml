@@ -70,7 +70,10 @@
                 <ul class="nav navbar-nav">
                     <li><a href="~/Home/BookList"><span class="glyphicon glyphicon-list-alt"></span>BookLists</a></li>
                     <li><a href="~/Home/EditBook"><span class="glyphicon glyphicon-book"></span>EditBook</a></li>
-                    <li><a href="~/Home/Registered"><span class="glyphicon glyphicon-tasks"></span>Registered</a></li>
+                    @if (Session["userId"].ToString() == "")
+                    {
+                        <li><a href="~/Home/Registered"><span class="glyphicon glyphicon-tasks"></span>Registered</a></li>
+                    }
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if (Session["userId"].ToString() == "")
