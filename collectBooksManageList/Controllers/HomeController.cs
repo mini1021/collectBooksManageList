@@ -92,18 +92,19 @@ namespace collectBooksManageList.Controllers
             cn.Open();
             int num = Convert.ToInt32(cmd.ExecuteScalar());
             cn.Close();
-            if (num == 1)
-            {
-                ViewBag.show = "ID重複";
-                return View();
-
-            }
-            else
+            if (num == 0)
             {
                 db.Registereds.Add(newData);
                 db.SaveChanges();
 
                 return RedirectToAction("Login");
+               
+
+            }
+            else
+            {
+                ViewBag.show = "ID重複";
+                return View();
             }
         }
         public ActionResult EditBook()
