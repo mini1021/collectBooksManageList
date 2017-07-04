@@ -126,6 +126,7 @@ namespace collectBooksManageList.Controllers
             if (string.IsNullOrEmpty(book.bookName)|| 
                 string.IsNullOrEmpty(book.episode.ToString()))
             {
+                ViewBag.show = "請輸入書名或集數";
                 return View();
             }
             else

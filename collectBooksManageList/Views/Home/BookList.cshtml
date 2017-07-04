@@ -6,8 +6,9 @@
     <h1>Hello @Session["userid"]</h1>
     <table>
         <tr>
-            <th>Book Name</th>
+            <th >Book Name</th>
             <th>Episode</th>
+            <th></th>
         </tr>
 
         @foreach (BookList bk in Model)
@@ -17,7 +18,14 @@
             <tr>
                 <td>@bk.bookName</td>
                 <td>@bk.episode</td>
+                <td><a style="position:relative" href="~/Home/Delete/@bk.bookId">
+
+    <span class="glyphicon glyphicon-remove " style="color:red;position:relative"></span>
+
+</a></td>
+
             </tr>
+
 
             @*<a class="list-group-item active">
                     <h4 class="list-group-item-heading">
