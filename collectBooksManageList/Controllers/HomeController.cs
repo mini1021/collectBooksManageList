@@ -38,7 +38,7 @@ namespace collectBooksManageList.Controllers
             int num = Convert.ToInt32(cmd.ExecuteScalar());
                 if (num == 0)
                 {
-                    ViewBag.show = "error";
+                    ViewBag.show = "ID or pwd Error";
                     return View();
 
                 }
