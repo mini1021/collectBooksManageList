@@ -126,10 +126,31 @@ namespace collectBooksManageList.Controllers
             {
                 return View();
             }
+            else
+            {
+                SqlConnection cn = new SqlConnection(@"server=.\SQLExpress_2;database=collectBooksManageList;Integrated Security=true");
 
-            db.BookLists.Add(book);
-            db.SaveChanges();
-            return RedirectToAction("BookList");
+                SqlCommand cmd = new SqlCommand("select * from BookList where bookName=@name AND episode=@no", cn);
+                cmd.Parameters.AddWithValue("@name", book.bookName);
+                cmd.Parameters.AddWithValue("@no", book.episode);
+                cn.Open();
+                int num = Convert.ToInt32(cmd.ExecuteScalar());
+                cn.Close();
+                if (num == 0)
+                {
+                    db.BookLists.Add(book);
+                    db.SaveChanges();
+                    return RedirectToAction("BookList");
+
+
+                }
+                else
+                {
+                    ViewBag.show = "書籍重複登記";
+                    return View();
+                }
+            }
+            
         }
         public ActionResult Logout()
         {
